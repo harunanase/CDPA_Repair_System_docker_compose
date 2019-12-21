@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+	Tutorial - Query IP Conflict page
+	290120 by WeiN
+-->
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<title>中山大學宿網報修系統</title>
+		<meta name="author" content="NSYSU-CDPA"/>
+	</head>
+	<body>
+		<div class="content">
+		<h2>Tutorial - Query IP Conflict</h2>
+		<h3 id="title" class="trans">若您的IP被人佔用，可依照下列步驟找出對方卡號</h3>
+		<ul>
+		<li>Command Line
+		<ul>
+			<li id="cmd_win1" class="trans">按下快捷鍵 Win+R 開啟執行命令視窗 &gt; 鍵入[ cmd ] &gt; 鍵入[ nbtstat -A 您被佔用的IP ]</li>
+			<li id="cmd_win2" class="trans">如下圖所示(被佔用IP時會有兩張卡號，請不要抄到自己的)：</li>
+			<img alt="命令列模式圖片" src={{ url_for("static", filename="img/tutorial/QueryIPConflict/cmd01.jpg") }}/>
+		</ul>
+		</li>
+		<li>Event Viewer
+		<ul>
+			<li id="ev_win1" class="trans">在開始圖示按滑鼠右鍵 &gt; 事件檢視器</li>
+			<img alt="Windows 專用模式圖片1" src={{ url_for("static", filename="img/tutorial/QueryIPConflict/ev01.jpg") }}/>
+			<li id="ev_win2" class="trans">事件檢視器 (本機) &gt; Windows 記錄 &gt; 系統</li>
+			<img alt="Windows 專用模式圖片2" src={{ url_for("static", filename="img/tutorial/QueryIPConflict/ev02.jpg") }}/>
+			<li id="ev_win3" class="trans">找「等級為錯誤」且「來源為Tcpip」的紀錄</li>
+			<img alt="Windows 專用模式圖片3" src={{ url_for("static", filename="img/tutorial/QueryIPConflict/ev03.jpg") }}/>
+		</ul>
+		</li>
+		</ul>
+		</div>
+		
+		<!-- Scripts -->
+		<script type="text/javascript" src={{ url_for("static", filename="js/jquery-3.3.1.min.js") }}></script>
+		<script type="text/javascript" src={{ url_for("static", filename="js/ipConflictTrans.js") }}></script>
+	</body>
+</html>
